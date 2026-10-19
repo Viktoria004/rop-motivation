@@ -8,7 +8,7 @@ export function calculate(input:Input) {
   const productivity=calculateProductivity(input.activeSales,input.activeDays,input.monthDays);
   if(productivity.error) return {error:productivity.error} as const;
   // Marginal rates yield 30000 at 130 sales and 80000 at 220.
-  const salesBonus=input.sales*100<input.salesPlan*85?0:Math.min(input.sales,100)*180+Math.min(Math.max(input.sales-100,0),50)*400+Math.max(input.sales-150,0)*600;
+  const salesBonus=Math.min(input.sales,100)*180+Math.min(Math.max(input.sales-100,0),50)*400+Math.max(input.sales-150,0)*600;
   if (input.declarations > input.sales || input.vipActual > input.sales || input.productActual > input.sales) return {error:'Декларации, ВИП и продажи с доппродуктом учитываются среди этих же продаж и не могут превышать их количество.'} as const;
   // Cross-products keep exact percentage thresholds; zero sales never earns a share bonus.
   const declarationPercent=input.sales ? input.declarations/input.sales*100 : 0;
@@ -16,14 +16,18 @@ export function calculate(input:Input) {
   const declarationBonus=!input.sales ? 0 : input.declarations*100>=input.sales*93 ? 40000 : input.declarations*100>=input.sales*90 ? 30000 : input.declarations*100>=input.sales*85 ? 10000 : 0;
   const vipBonus=input.vipActual>=7 ? 18000 : input.vipActual>=5 ? 12000 : input.vipActual>=3 ? 6000 : 0;
   const productBonus=!input.sales ? 0 : input.productActual*100>=input.sales*25 ? 15000 : input.productActual*100>=input.sales*20 ? 10000 : input.productActual*100>=input.sales*15 ? 5000 : 0;
-  const coefficient=1;
-  const commercial=Math.round((salesBonus+declarationBonus+vipBonus+productBonus)*coefficient*100)/100;
+  const coefficient=input.sales*100<input.salesPlan*85?0:input.sales*100<input.salesPlan*90?0.5:input.sales*100<input.salesPlan*95?0.7:1;
+  const commercial=salesBonus+declarationBonus+vipBonus+productBonus;
   const planBonus=input.sales>=input.salesPlan?10000:0;
   const referralGoal=Math.ceil(3*input.activeDays/input.monthDays);
   const referralBonus=input.referrals>=referralGoal?5000:0;
   const qualityBonus=input.qualityPassed*5000;
   const penalties=Math.floor(input.cancellations/3)*5000+Math.floor(input.lostLeads/5)*3000+Math.floor(input.discrepancies/3)*3000+input.incorrectFigures*5000+input.discipline+(input.referralPercent<90?5000:0);
-  const total=Math.round((100000+commercial+planBonus+productivity.bonus+referralBonus+qualityBonus-penalties)*100)/100;
+  const earnedBonus=commercial+planBonus+productivity.bonus+referralBonus+qualityBonus;
+  const payableBonus=Math.round(earnedBonus*coefficient*100)/100;
+  // Deferred declarations retain the coefficient of their sales month.
+  const declarationPayable=Math.round(declarationBonus*coefficient*100)/100;
+  const total=Math.round((100000+payableBonus-penalties)*100)/100;
   if(!Number.isSafeInteger(Math.round(total*100))) return {error:'Слишком большие значения для точного расчёта.'} as const;
-  return {error:null,declarationPercent,productPercent,productivity,salesBonus,declarationBonus,vipBonus,productBonus,coefficient,commercial,planBonus,referralGoal,referralBonus,qualityBonus,penalties,total,currentMonthTotal:total-declarationBonus} as const;
+  return {error:null,declarationPercent,productPercent,productivity,salesBonus,declarationBonus,vipBonus,productBonus,coefficient,commercial,planBonus,referralGoal,referralBonus,qualityBonus,penalties,earnedBonus,payableBonus,declarationPayable,total,currentMonthTotal:total-declarationPayable} as const;
 }

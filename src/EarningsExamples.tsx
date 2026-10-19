@@ -4,7 +4,7 @@ const money=(n:number)=>new Intl.NumberFormat('ru-RU').format(n);
 export default function EarningsExamples(){
  return <section className={styles.section} id="earnings-examples">
   <h2>Выполняю план — сколько получаю</h2>
-  <p>В каждой карточке свой план выполнен на 100%, дополнительные показатели достигнуты, нарушений нет. Средняя продаж на боевого задана как условие примера: 17, 18, 20 и 22 соответственно.</p>
+  <p>В каждой карточке свой план выполнен на 100%, дополнительные показатели достигнуты, нарушений нет. Общий коэффициент премий — 1. Средняя продаж на боевого задана как условие примера: 17, 18, 20 и 22 соответственно.</p>
   <div className={styles.earningsCards}>
    {[160,180,200,220].map(sales=>{
     const declarations=Math.ceil(sales*93/100),products=Math.ceil(sales*.25);
@@ -28,7 +28,7 @@ export default function EarningsExamples(){
      ].map(([label,value])=><div key={String(label)}><span>{label}</span><b>{money(Number(value))} ₽</b></div>)}</div>
      <div className={styles.paymentSummary}>
       <p>За текущий месяц <strong>{money(r.currentMonthTotal)} ₽</strong></p>
-      <p>Со следующей зарплатой за декларации <strong>{money(r.declarationBonus)} ₽</strong></p>
+      <p>Со следующей зарплатой за декларации <strong>{money(r.declarationPayable)} ₽</strong></p>
      </div>
      {r.productivity.bonus===0&&<p className={styles.smallNote}>Бонус за продуктивность начинается со средней 17 продаж на боевого.</p>}
     </article>;
