@@ -1,0 +1,788 @@
+html{scroll-behavior:smooth}body{margin:0}/* src/rop-motivation.module.css */
+.rop_motivation_page {
+  --ink:#172d28;
+  --muted:#61736b;
+  --green:#174c3e;
+  --line:#dce5df;
+  min-height: 100vh;
+  background: #f7f9f7;
+  color: var(--ink);
+  font:
+    16px/1.55 Inter,
+    Arial,
+    sans-serif;
+}
+.rop_motivation_page * {
+  box-sizing: border-box;
+}
+.rop_motivation_page h1,
+.rop_motivation_page h2,
+.rop_motivation_page h3,
+.rop_motivation_page p {
+  margin: 0;
+}
+.rop_motivation_page a {
+  color: inherit;
+  text-decoration: none;
+}
+.rop_motivation_page button,
+.rop_motivation_page input {
+  font: inherit;
+}
+.rop_motivation_page a,
+.rop_motivation_page button,
+.rop_motivation_page input,
+.rop_motivation_page summary {
+  outline-offset: 5px;
+}
+.rop_motivation_header {
+  max-width: 1064px;
+  margin: auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.rop_motivation_brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.rop_motivation_brand small {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.rop_motivation_mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: white;
+}
+.rop_motivation_badge {
+  font-size: 13px;
+  color: #526951;
+  padding: 5px 13px;
+  border: 1px solid #c8d7cb;
+  border-radius: 30px;
+}
+.rop_motivation_navLink {
+  font-size: 14px;
+  margin-left: auto;
+}
+.rop_motivation_content {
+  max-width: 1064px;
+  padding: 0 32px;
+  margin: auto;
+}
+.rop_motivation_intro {
+  padding-top: 40px;
+}
+.rop_motivation_eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .1em;
+}
+.rop_motivation_page h1 {
+  font-size: clamp(36px, 4.7vw, 54px);
+  line-height: 1.1;
+  font-weight: 750;
+  letter-spacing: -.045em;
+  margin-top: 16px;
+}
+.rop_motivation_page h1 span {
+  color: var(--green);
+}
+.rop_motivation_lead {
+  color: var(--muted);
+  font-size: 18px;
+  margin-top: 18px !important;
+}
+.rop_motivation_target {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  background: #e6f4a6;
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-top: 26px;
+}
+.rop_motivation_target strong {
+  font-size: 27px;
+  letter-spacing: -.025em;
+}
+.rop_motivation_target span {
+  font-size: 14px;
+}
+.rop_motivation_section {
+  padding-top: 42px;
+  scroll-margin-top: 20px;
+}
+.rop_motivation_sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.rop_motivation_page h2 {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+.rop_motivation_sectionHeading > span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.rop_motivation_rates {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0 25px;
+}
+.rop_motivation_rates article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rop_motivation_rates article:last-child {
+  border: 0;
+}
+.rop_motivation_rates h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+.rop_motivation_rates p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.rop_motivation_rates strong {
+  font-size: 22px;
+  white-space: nowrap;
+  color: var(--green);
+  letter-spacing: -.025em;
+}
+.rop_motivation_smallNote {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 15px !important;
+}
+.rop_motivation_reference {
+  background: var(--green);
+  color: white;
+  border-radius: 20px;
+  padding: 30px 34px;
+  margin-top: 36px;
+}
+.rop_motivation_referenceHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+}
+.rop_motivation_reference .rop_motivation_eyebrow {
+  color: #dceba6;
+}
+.rop_motivation_referenceHead h2 {
+  font-size: 26px;
+  margin-top: 10px;
+}
+.rop_motivation_referenceHead p {
+  font-size: 14px;
+  color: #d0ded5;
+  margin-top: 10px;
+}
+.rop_motivation_referenceHead > strong {
+  color: #e6f4a6;
+  font-size: 36px;
+  letter-spacing: -.03em;
+  white-space: nowrap;
+  text-align: right;
+}
+.rop_motivation_referenceHead small {
+  display: block;
+  font-size: 13px;
+  color: #d0ded5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.rop_motivation_exampleLines {
+  margin-top: 24px;
+  border-top: 1px solid #517367;
+  padding-top: 10px;
+}
+.rop_motivation_exampleLines > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 7px 0;
+  font-size: 15px;
+}
+.rop_motivation_exampleLines b {
+  white-space: nowrap;
+  font-weight: 650;
+}
+.rop_motivation_exampleNote {
+  font-size: 13px;
+  color: #d0ded5;
+  margin-top: 18px !important;
+}
+.rop_motivation_scenarioRange {
+  font-size: 14px;
+  margin-top: 18px !important;
+  padding-top: 18px;
+  border-top: 1px solid #517367;
+}
+.rop_motivation_reset {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--green);
+  font-size: 14px !important;
+  cursor: pointer;
+}
+.rop_motivation_calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.rop_motivation_controls {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+}
+.rop_motivation_field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.rop_motivation_field span {
+  max-width: 260px;
+}
+.rop_motivation_field input {
+  width: 105px;
+  min-width: 85px;
+  padding: 9px 10px;
+  border: 1px solid #b9ccc0;
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  text-align: right;
+}
+.rop_motivation_additional {
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+  margin-top: 20px;
+}
+.rop_motivation_additional summary {
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.rop_motivation_additional > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 16px;
+}
+.rop_motivation_result {
+  background: #eaf0e9;
+  border-radius: 16px;
+  padding: 27px;
+  align-self: start;
+}
+.rop_motivation_result > span {
+  color: var(--muted);
+  font-size: 14px;
+}
+.rop_motivation_total {
+  display: block;
+  font-size: 46px;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+.rop_motivation_total small {
+  font-size: .68em;
+  font-weight: 500;
+}
+.rop_motivation_breakdown {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.rop_motivation_breakdown > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 7px 0;
+}
+.rop_motivation_breakdown b {
+  white-space: nowrap;
+  font-weight: 650;
+}
+.rop_motivation_result p {
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid #c8d8ca;
+  font-size: 13px;
+  color: var(--green);
+}
+.rop_motivation_rules {
+  padding-top: 40px;
+}
+.rop_motivation_ruleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 22px;
+}
+.rop_motivation_ruleGrid h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.rop_motivation_ruleGrid p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 9px;
+}
+.rop_motivation_page .rop_motivation_footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 35px 0 0;
+  width: 100%;
+  max-width: none;
+  padding: 20px 0 30px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--muted);
+  font-size: 13px;
+  box-shadow: none;
+}
+.rop_motivation_page .rop_motivation_footer strong {
+  color: var(--ink);
+}
+.rop_motivation_page .rop_motivation_footer span {
+  color: var(--muted);
+}
+@media (max-width: 700px) {
+  .rop_motivation_header {
+    padding: 20px;
+    gap: 12px;
+  }
+  .rop_motivation_content {
+    padding: 0 20px;
+  }
+  .rop_motivation_navLink {
+    display: none;
+  }
+  .rop_motivation_intro {
+    padding-top: 28px;
+  }
+  .rop_motivation_lead {
+    font-size: 16px;
+  }
+  .rop_motivation_desktopBreak {
+    display: none;
+  }
+  .rop_motivation_target {
+    display: block;
+    padding: 20px;
+  }
+  .rop_motivation_target strong {
+    font-size: 25px;
+    display: block;
+  }
+  .rop_motivation_target span {
+    display: block;
+    margin-top: 9px;
+  }
+  .rop_motivation_sectionHeading {
+    display: block;
+  }
+  .rop_motivation_sectionHeading > span {
+    display: block;
+    margin-top: 10px;
+  }
+  .rop_motivation_page h2 {
+    font-size: 24px;
+  }
+  .rop_motivation_rates {
+    padding: 0 18px;
+  }
+  .rop_motivation_rates article {
+    align-items: start;
+    gap: 12px;
+  }
+  .rop_motivation_rates article > div {
+    min-width: 0;
+  }
+  .rop_motivation_rates strong {
+    font-size: 18px;
+  }
+  .rop_motivation_rates p {
+    font-size: 13px;
+  }
+  .rop_motivation_reference {
+    padding: 24px 20px;
+  }
+  .rop_motivation_referenceHead {
+    display: block;
+  }
+  .rop_motivation_referenceHead h2 {
+    font-size: 23px;
+  }
+  .rop_motivation_referenceHead > strong {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+  }
+  .rop_motivation_referenceHead small {
+    display: inline;
+    margin-left: 12px;
+  }
+  .rop_motivation_exampleLines > div {
+    font-size: 14px;
+    gap: 15px;
+  }
+  .rop_motivation_calculator {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .rop_motivation_controls,
+  .rop_motivation_result {
+    padding: 23px 20px;
+  }
+  .rop_motivation_reset {
+    margin-top: 14px;
+  }
+  .rop_motivation_ruleGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .rop_motivation_ruleGrid p {
+    font-size: 15px;
+  }
+  .rop_motivation_page .rop_motivation_footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rop_motivation_badge {
+    font-size: 12px;
+  }
+  .rop_motivation_total {
+    font-size: 42px;
+  }
+}
+@media (max-width: 370px) {
+  .rop_motivation_rates article {
+    flex-direction: column;
+    gap: 7px;
+  }
+  .rop_motivation_target strong {
+    font-size: 23px;
+  }
+  .rop_motivation_referenceHead small {
+    display: block;
+    margin-left: 0;
+  }
+  .rop_motivation_field {
+    gap: 12px;
+  }
+  .rop_motivation_field input {
+    width: 85px;
+  }
+}
+.rop_motivation_controls h3 {
+  font-size: 16px;
+  margin: 25px 0 15px;
+}
+.rop_motivation_controls h3:first-child {
+  margin-top: 0;
+}
+.rop_motivation_controls .rop_motivation_smallNote {
+  margin-bottom: 16px;
+}
+.rop_motivation_tableWrap {
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+}
+.rop_motivation_tableWrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.rop_motivation_tableWrap th,
+.rop_motivation_tableWrap td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.rop_motivation_tableWrap th {
+  background: #eaf0e9;
+  font-weight: 600;
+}
+.rop_motivation_tableWrap tr:last-child td {
+  border-bottom: 0;
+}
+.rop_motivation_tableWrap td:last-child {
+  white-space: nowrap;
+  color: var(--green);
+}
+.rop_motivation_formulaBox {
+  display: grid;
+  gap: 9px;
+  margin-top: 20px;
+  padding: 18px 0;
+  border-block: 1px solid #c8d8ca;
+  font-size: 14px;
+}
+.rop_motivation_formulaBox strong {
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+.rop_motivation_check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.rop_motivation_check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--green);
+}
+.rop_motivation_smallNote a {
+  text-decoration: underline;
+}
+.rop_motivation_calculator > * {
+  min-width: 0;
+}
+@media (max-width: 370px) {
+  .rop_motivation_tableWrap th,
+  .rop_motivation_tableWrap td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  .rop_motivation_field {
+    flex-wrap: wrap;
+  }
+  .rop_motivation_exampleLines > div {
+    flex-wrap: wrap;
+  }
+}
+.rop_motivation_field select {
+  min-width: 0;
+  max-width: 65%;
+  padding: 9px;
+  border: 1px solid #b9ccc0;
+  border-radius: 8px;
+  background: white;
+  font: inherit;
+  color: var(--ink);
+}
+.rop_motivation_tableWrap {
+  overflow-x: auto;
+}
+.rop_motivation_examplesHeading {
+  margin: 28px 0 12px !important;
+  font-size: 20px;
+}
+.rop_motivation_earningsCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.rop_motivation_earningsCard {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px;
+  background: #eaf0e9;
+}
+.rop_motivation_earningsCard h3 {
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+.rop_motivation_earningsCard > span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.rop_motivation_earningsTotal {
+  display: block;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.2;
+  color: var(--green);
+  margin: 6px 0 12px;
+}
+.rop_motivation_earningsCard > p {
+  font-size: 14px;
+}
+.rop_motivation_earningsPayments {
+  border-top: 1px solid #c8d8ca;
+  margin-top: 20px;
+  padding-top: 12px;
+}
+.rop_motivation_earningsPayments > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 7px 0;
+  font-size: 14px;
+}
+.rop_motivation_earningsPayments b {
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .rop_motivation_earningsCards {
+    grid-template-columns: 1fr;
+  }
+  .rop_motivation_earningsCard {
+    padding: 22px;
+  }
+}
+@media (max-width: 370px) {
+  .rop_motivation_earningsPayments > div {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+.rop_motivation_exampleControls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  margin-top: 22px;
+}
+.rop_motivation_exampleControls .rop_motivation_field {
+  margin: 0;
+}
+.rop_motivation_earningsCard > p {
+  margin-bottom: 12px;
+}
+.rop_motivation_earningsCard .rop_motivation_planExplanation {
+  margin-top: 16px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+}
+.rop_motivation_earningsCard > span {
+  display: block;
+  margin-top: 18px;
+}
+@media (max-width: 700px) {
+  .rop_motivation_exampleControls {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.rop_motivation_bonusSliders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+  margin-top: 20px;
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.rop_motivation_bonusSlider {
+  display: block;
+  min-width: 0;
+  font-size: 14px;
+}
+.rop_motivation_bonusSlider > span {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px 12px;
+  margin-bottom: 12px;
+}
+.rop_motivation_bonusSlider strong {
+  color: var(--green);
+}
+.rop_motivation_bonusSlider input {
+  width: 100%;
+  min-height: 28px;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .rop_motivation_bonusSliders {
+    grid-template-columns: 1fr;
+  }
+}
+.rop_motivation_bonusSlider input[type=number] {
+  width: 90px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid #b9ccc0;
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  text-align: right;
+}
+.rop_motivation_bonusSlider input[type=range] {
+  width: 100%;
+}
+.rop_motivation_paymentSummary {
+  margin-top: 20px;
+  padding: 16px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.rop_motivation_paymentSummary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.rop_motivation_paymentSummary p + p {
+  margin-top: 12px;
+}
+.rop_motivation_paymentSummary strong {
+  white-space: nowrap;
+}
+@media (max-width: 370px) {
+  .rop_motivation_paymentSummary p {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
