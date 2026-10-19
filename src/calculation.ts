@@ -1,5 +1,5 @@
 import { calculateProductivity } from './productivity.ts';
-export const reference = { sales:220, salesPlan:220, declarations:205, activeSales:220, activeDays:220, monthDays:22, referrals:30, referralPercent:90, vipActual:7, productActual:27, qualityPassed:3, cancellations:0, lostLeads:0, discrepancies:0, incorrectFigures:0, discipline:0 };
+export const reference = { sales:220, salesPlan:220, declarations:205, activeSales:220, activeDays:220, monthDays:22, referrals:30, referralPercent:90, vipActual:7, productActual:55, qualityPassed:3, cancellations:0, lostLeads:0, discrepancies:0, incorrectFigures:0, discipline:0 };
 export type Input = typeof reference;
 export function calculate(input:Input) {
   const values=Object.entries(input);
@@ -15,7 +15,7 @@ export function calculate(input:Input) {
   const productPercent=input.sales ? input.productActual/input.sales*100 : 0;
   const declarationBonus=!input.sales ? 0 : input.declarations*100>=input.sales*93 ? 40000 : input.declarations*100>=input.sales*90 ? 30000 : input.declarations*100>=input.sales*85 ? 10000 : 0;
   const vipBonus=input.vipActual>=7 ? 18000 : input.vipActual>=5 ? 12000 : input.vipActual>=3 ? 6000 : 0;
-  const productBonus=!input.sales ? 0 : input.productActual*100>=input.sales*12 ? 10000 : input.productActual*100>=input.sales*10 ? 6000 : input.productActual*100>=input.sales*8 ? 3000 : 0;
+  const productBonus=!input.sales ? 0 : input.productActual*100>=input.sales*25 ? 10000 : input.productActual*100>=input.sales*20 ? 6000 : input.productActual*100>=input.sales*15 ? 3000 : 0;
   const coefficient=1;
   const commercial=Math.round((salesBonus+declarationBonus+vipBonus+productBonus)*coefficient*100)/100;
   const planBonus=input.sales>=input.salesPlan?10000:0;

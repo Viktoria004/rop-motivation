@@ -7,7 +7,7 @@ export default function EarningsExamples(){
   <p>В каждой карточке свой план выполнен на 100%, дополнительные показатели достигнуты, нарушений нет. Средняя продаж на боевого задана как условие примера: 17, 18, 20 и 22 соответственно.</p>
   <div className={styles.earningsCards}>
    {[160,180,200,220].map(sales=>{
-    const declarations=Math.ceil(sales*93/100),products=Math.ceil(sales*.12);
+    const declarations=Math.ceil(sales*93/100),products=Math.ceil(sales*.25);
     const average=sales===160?17:sales/10;
     const r=calculate({...reference,sales,salesPlan:sales,activeSales:sales,activeDays:sales,monthDays:average,declarations,productActual:products});
     if(r.error!==null)return null;
@@ -21,7 +21,7 @@ export default function EarningsExamples(){
       ['За выполнение плана на 100%',r.planBonus],
       [`Продуктивность: ${average} продаж на боевого`,r.productivity.bonus!],
       ['7 оплаченных ВИП',r.vipBonus],
-      [`Доппродукты: ${products} из ${sales} продаж (от 12%)`,r.productBonus],
+      [`Доппродукты: ${products} из ${sales} продаж (от 25%)`,r.productBonus],
       ['План рекомендаций выполнен: 3 на боевого',r.referralBonus],
       ['Качество: все 3 цели выполнены',r.qualityBonus],
       [`Декларации: ${declarations} из ${sales} (от 93%)`,r.declarationBonus],
