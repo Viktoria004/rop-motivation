@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {dashboard,demo,qualityTarget,withSales} from '../src/dashboard/model.ts';
+import {dashboard,demo,qualityTarget} from '../src/dashboard/model.ts';
 
 test('separates current payout and deferred declarations; cards reconcile',()=>{
  const s=dashboard(demo);assert.equal(s.error,null);
@@ -8,14 +8,6 @@ test('separates current payout and deferred declarations; cards reconcile',()=>{
  assert.equal(s.currentPayout,100000+s.rows.reduce((sum,row)=>sum+row.paid,0)-s.result.penalties);
  const prior=dashboard({...demo,previousDeclarations:40000});
  assert.equal(prior.currentPayout,212100);assert.equal(prior.result.declarationPayable,21000);
-});
-test('sales scenario recomputes coefficient and shares without inventing products or signatures',()=>{
- const next=withSales(demo,10);assert.equal(demo.sales,180);
- assert.equal(next.sales,190);assert.equal(next.activeSales,190);
- assert.equal(next.productActual,38);assert.equal(next.declarations,162);
- const s=dashboard(next);assert.equal(s.error,null);
- assert.equal(s.result.coefficient,1);assert.equal(s.currentPayout,214000);
- assert.equal(s.result.declarationPayable,10000);
 });
 test('quality schedule has exact inclusive boundaries and never resets in new year',()=>{
  assert.equal(qualityTarget('2026-10'),77);assert.equal(qualityTarget('2026-11'),80);

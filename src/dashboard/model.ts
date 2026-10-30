@@ -38,8 +38,3 @@ export function dashboard(input:DashboardInput){
     currentPayout:Math.round((result.currentMonthTotal+previousDeclarations)*100)/100,
     withheld:Math.round((result.earnedBonus-result.payableBonus)*100)/100};
 }
-
-// A sales-only scenario never invents signatures, VIP, products or recommendations.
-export function withSales(input:DashboardInput,extra:number):DashboardInput {
-  return {...input,sales:input.sales+extra,activeSales:input.activeSales+extra};
-}
